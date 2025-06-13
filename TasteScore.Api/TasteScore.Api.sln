@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasteScore.Api", "TasteScore.Api.csproj", "{380DA60C-40D0-4880-B1E7-E4AA5ACE585B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasteScore.Api", "TasteScore.Api.csproj", "{380DA60C-40D0-4880-B1E7-E4AA5ACE585B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasteScore.Domain", "..\TasteScore.Domain\TasteScore.Domain.csproj", "{3A643FA4-44CC-4686-A263-1C6826C3FA0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasteScore.UnitTest", "..\TasteScore.UnitTest\TasteScore.UnitTest.csproj", "{B35AF9D4-9514-43D3-B026-D2D8BF53EB6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{380DA60C-40D0-4880-B1E7-E4AA5ACE585B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{380DA60C-40D0-4880-B1E7-E4AA5ACE585B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{380DA60C-40D0-4880-B1E7-E4AA5ACE585B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A643FA4-44CC-4686-A263-1C6826C3FA0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A643FA4-44CC-4686-A263-1C6826C3FA0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A643FA4-44CC-4686-A263-1C6826C3FA0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A643FA4-44CC-4686-A263-1C6826C3FA0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B35AF9D4-9514-43D3-B026-D2D8BF53EB6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B35AF9D4-9514-43D3-B026-D2D8BF53EB6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B35AF9D4-9514-43D3-B026-D2D8BF53EB6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B35AF9D4-9514-43D3-B026-D2D8BF53EB6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
