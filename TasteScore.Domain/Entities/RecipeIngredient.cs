@@ -10,6 +10,6 @@ namespace TasteScore.Domain.Entities
     public class RecipeIngredient
     {
         public Ingredient Ingredient { get; set; }
-        public ICookingMeasure Quanity { get; set; }
+        public IIngredientUnit Quanity { get; set; }
     }
 }

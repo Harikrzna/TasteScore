@@ -9,11 +9,11 @@ namespace TasteScore.Domain.CookingMeasure
 {
     public static class CookingMeaureExtensions
     {
-        public static TTarget ConvertTo<TTarget>(this ICookingMeasure source)
-            where TTarget : ICookingMeasure, new()
+        public static TTarget ConvertTo<TTarget>(this IMassUnit source)
+            where TTarget : IMassUnit, new()
         {
-            double value=source.ToBaseValue();
-            return (TTarget)new TTarget().FromBaseValue(value);
+            IBaseUnit value=source.ToBaseUnit();
+            return (TTarget)new TTarget().FromBaseUnit(value);
         }
 
     }
