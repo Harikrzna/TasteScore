@@ -16,5 +16,12 @@ namespace TasteScore.Domain.CookingMeasure
             return (TTarget)new TTarget().FromBaseUnit(value);
         }
 
+        public static TTarget ConvertTo<TTarget>(this IVolumeUnit source)
+            where TTarget : IVolumeUnit, new()
+        {
+            IBaseUnit value = source.ToBaseUnit();
+            return (TTarget)new TTarget().FromBaseUnit(value);
+        }
+
     }
 }

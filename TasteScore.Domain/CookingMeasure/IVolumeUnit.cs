@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TasteScore.Domain.CookingMeasure
 {
-    internal interface IVolumeUnit:IIngredientUnit,IBaseConvertible
+    public interface IVolumeUnit:IIngredientUnit,IBaseConvertible
     {
     }
 }

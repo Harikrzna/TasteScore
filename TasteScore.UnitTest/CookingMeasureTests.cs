@@ -41,5 +41,13 @@ namespace TasteScore.UnitTest
             Gram gram = kilo.ConvertTo<Gram>();
             Assert.That (gram.Value == 1000);
         }
+
+        [Test]
+        public void ConvertTo_LitreToMilliLitre_SuccessfullyConverted()
+        {
+            Litre litre = new Litre(1);
+            MilliLitre milliLitre = litre.ConvertTo<MilliLitre>();
+            Assert.That(milliLitre.Value == 1000);
+        }
     }
 }
