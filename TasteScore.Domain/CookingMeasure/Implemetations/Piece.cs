@@ -7,10 +7,14 @@ using TasteScore.Domain.Entities;
 
 namespace TasteScore.Domain.CookingMeasure.Implemetations
 {
-    public class Piece : ICountUnit
+    public struct Piece : ICountUnit
     {
         public string Name => "Piece";
         public string Symbol => "P";
         public double Value { get ; init; }
+        public Piece(double value)
+        {
+            Value = value;
+        }
     }
 }

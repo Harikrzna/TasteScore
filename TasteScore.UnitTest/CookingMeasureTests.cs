@@ -1,5 +1,6 @@
 using TasteScore.Domain.CookingMeasure;
 using TasteScore.Domain.CookingMeasure.Implemetations;
+using TasteScore.Domain.Entities;
 
 namespace TasteScore.UnitTest
 {
@@ -48,6 +49,20 @@ namespace TasteScore.UnitTest
             Litre litre = new Litre(1);
             MilliLitre milliLitre = litre.ConvertTo<MilliLitre>();
             Assert.That(milliLitre.Value == 1000);
+        }
+
+        [Test]
+        public void GetNutrientInfo_RecipeIngredientInPiece_SuccessfullyConverted()
+        {
+            IngredientVarient varient = new() { Size = SizeOption.Medium, Locale = IngredientLocale.SouthIndian, GramPerPiece = 130 };
+            List<NutrientLabel> nutrientsLabel = new() { new NutrientLabel() { NutrientId=new Guid(),Name = "Carbohydrates", Qty = 11, ForEvery = new Gram(130) } };
+            Ingredient ingredient = new() { Id=1,Name="Onion",Nutrients=nutrientsLabel,Varient=varient};
+            Piece piece = new (1);
+            RecipeIngredient recipeIngredient = new() { Ingredient = ingredient, Measure = piece };
+
+            var resultNutrient=recipeIngredient.GetNutrientInfo().First();
+            var expectedNutrient = new Nutrient() { NutrientId = nutrientsLabel[0].NutrientId,Name = "Carbohydrates", Qty = 11 };
+            Assert.Equals(resultNutrient, expectedNutrient);
         }
     }
 }
