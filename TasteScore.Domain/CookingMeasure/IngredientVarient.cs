@@ -10,6 +10,7 @@ namespace TasteScore.Domain.CookingMeasure
     {
         public SizeOption Size { get; set ; }
         public IngredientLocale Locale { get; set; }
-        public double GramPerPiece { get; set; }
+        public double? GramPerCount { get; set; }
+        public double? Density { get; set; }
     }
 }

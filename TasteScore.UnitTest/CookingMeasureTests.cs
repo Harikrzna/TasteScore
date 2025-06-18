@@ -52,17 +52,14 @@ namespace TasteScore.UnitTest
         }
 
         [Test]
-        public void GetNutrientInfo_RecipeIngredientInPiece_SuccessfullyConverted()
+        public void ConvertTo_GramToPiece_SuccessfullyConverted()
         {
-            IngredientVarient varient = new() { Size = SizeOption.Medium, Locale = IngredientLocale.SouthIndian, GramPerPiece = 130 };
-            List<NutrientLabel> nutrientsLabel = new() { new NutrientLabel() { NutrientId=new Guid(),Name = "Carbohydrates", Qty = 11, ForEvery = new Gram(130) } };
-            Ingredient ingredient = new() { Id=1,Name="Onion",Nutrients=nutrientsLabel,Varient=varient};
-            Piece piece = new (1);
-            RecipeIngredient recipeIngredient = new() { Ingredient = ingredient, Measure = piece };
-
-            var resultNutrient=recipeIngredient.GetNutrientInfo().First();
-            var expectedNutrient = new Nutrient() { NutrientId = nutrientsLabel[0].NutrientId,Name = "Carbohydrates", Qty = 11 };
-            Assert.Equals(resultNutrient, expectedNutrient);
+            Gram gram = new Gram(1000);
+            Gram gramPerPiece = new Gram(250);
+            Piece result = gram.ConvertTo<Piece>(gramPerPiece);
+            Piece expected = new Piece(4);
+            Assert.That(result.Equals(expected));
         }
+
     }
 }
